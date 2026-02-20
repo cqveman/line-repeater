@@ -1,8 +1,8 @@
-# Line Repeater
+## Line Repeater
 
 A tiny CLI tool that repeats each non-empty line in a text file.
 
-## Usage
+### Usage
 
 ```bash
 lr <file> <repeat_n_times>
