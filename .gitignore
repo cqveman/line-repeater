@@ -3,3 +3,4 @@
 /dist
 /build
 lr.spec
+*.egg-info/

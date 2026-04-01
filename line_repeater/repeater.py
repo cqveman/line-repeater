@@ -1,7 +1,7 @@
 from line_repeater.utils import *
 
 
-def repeat_lines(file, repeat_n_times, till_line, block_line_sep, line_sep):
+def repeater(file, repeat_n_times, till_line, block_line_sep, line_sep):
     _list = []
     lines = formatter(file.readlines())
 
