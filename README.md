@@ -62,7 +62,7 @@ lr file.txt 4 --till-line 2
 
 ## API
 
-You can also use `repeat_lines()` directly in your code.
+You can also use `repeater()` directly in your code.
 
 ```python
 from line_repeater import repeater
