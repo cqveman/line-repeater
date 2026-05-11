@@ -2,19 +2,22 @@
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
+
 [project]
 name = "line-repeater"
-authors = [{ name = "Abdullah Alhamdi", email = "trymemain.pb.hug@gmail.com" }]
 description = "A simple CLI tool that repeats lines of text."
+authors = [{ name = "Abdullah Alhamdi", email = "trymemain.pb.hug@gmail.com" }]
+
 dynamic = ["version"]
 requires-python = ">=3.10"
+
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
+
 keywords = ["cli", "text", "repeat", "lines"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
-    "Intended Audience :: Developers",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -22,16 +25,20 @@ classifiers = [
     "Programming Language :: Python :: 3.14",
     "Topic :: Utilities",
 ]
+
 dependencies = [
     "typer",
 ]
+
 
 [project.urls]
 Issues = "https://github.com/cqveman/line-repeater/issues"
 Repository = "https://github.com/cqveman/line-repeater"
 
+
 [tool.setuptools.dynamic]
 version = { attr = "line_repeater.__version__" }
 
+
 [project.scripts]
-lr = "line_repeater.main:main"
+lr = "src.line_repeater.main:main"
