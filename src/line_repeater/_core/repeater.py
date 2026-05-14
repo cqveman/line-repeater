@@ -1,9 +1,12 @@
-from line_repeater.utils import *
+from line_repeater._utils import *
 
 
 def repeater(file, repeat_n_times, till_line, block_line_sep, line_sep):
     _list = []
     lines = formatter(file.readlines())
+
+    if len(lines) == 0:
+        raise ValueError('File is empty.')
 
     if till_line > len(lines):
 
@@ -21,7 +24,7 @@ def repeater(file, repeat_n_times, till_line, block_line_sep, line_sep):
 
             add_block_sep(_list, block_line_sep)
 
-    else:
+    else:  # Repeat line by line
 
         for l in lines:
             for _ in range(1, repeat_n_times + 1):
@@ -33,11 +36,8 @@ def repeater(file, repeat_n_times, till_line, block_line_sep, line_sep):
 
             add_block_sep(_list, block_line_sep)
 
-    # Removes the last line separator at EOF
-    try:
-        _list.pop()
-    except IndexError:
-        raise IndexError('File is empty.')
+    # Removes the last BLOCK LINE separator at EOF
+    _list.pop()
 
     file.seek(0)
     file.truncate()

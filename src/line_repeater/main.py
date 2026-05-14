@@ -1,4 +1,4 @@
-from line_repeater.cli import app
+from line_repeater._cli import app
 
 
 def main():

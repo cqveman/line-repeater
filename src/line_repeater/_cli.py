@@ -1,7 +1,7 @@
 import typer
 from typing import Annotated
 
-from line_repeater.repeater import repeater
+from line_repeater._core.repeater import repeater
 
 app = typer.Typer(add_completion=False)
 
@@ -32,7 +32,7 @@ def line_repeater(
 ):
     try:
         repeater(file, repeat_n_times, till_line, block_line_sep, line_sep)
-    except (ValueError, IndexError) as e:
+    except Exception as e:
         typer.echo(str(e), err=True)
         raise typer.Exit(code=1)
 

@@ -41,4 +41,4 @@ version = { attr = "line_repeater.__version__" }
 
 
 [project.scripts]
-lr = "src.line_repeater.main:main"
+lr = "line_repeater.main:main"

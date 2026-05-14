@@ -2,5 +2,5 @@
 /.venv
 /dist
 /build
-lr.spec
 *.egg-info/
+dist_exe/
