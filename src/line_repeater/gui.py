@@ -13,28 +13,32 @@ def gui():
     root.place_window_center()
 
     root.columnconfigure(0, weight=1)
-    root.rowconfigure((0, 1), weight=1)
+    root.rowconfigure((0, 2), weight=0)
+    root.rowconfigure(1, weight=1)
 
     # Parameters
 
     params_frame = tb.Frame(root)
     params_frame.grid(row=0, column=0, padx=16, pady=(16, 8), sticky='ew')
 
+    params_frame.columnconfigure(1, weight=1)
+    params_frame.columnconfigure(3, weight=1)
+
     tb.Label(params_frame, text="Repeat N times").grid(row=0, column=0, padx=(0, 4), sticky='w')
-    repeat_n_entry = tb.Entry(params_frame, width=8)
-    repeat_n_entry.grid(row=0, column=1, padx=(0, 16))
+    repeat_n_entry = tb.Entry(params_frame)
+    repeat_n_entry.grid(row=0, column=1, padx=(0, 16), sticky='ew')
 
     tb.Label(params_frame, text="Till line").grid(row=0, column=2, padx=(0, 4), sticky='w')
-    till_line_entry = tb.Entry(params_frame, width=8)
-    till_line_entry.grid(row=0, column=3, padx=(0, 16))
+    till_line_entry = tb.Entry(params_frame)
+    till_line_entry.grid(row=0, column=3, sticky='ew')
 
-    tb.Label(params_frame, text="Block separator").grid(row=0, column=4, padx=(0, 4), sticky='w')
-    block_sep_entry = tb.Entry(params_frame, width=14)
-    block_sep_entry.grid(row=0, column=5, padx=(0, 16))
+    tb.Label(params_frame, text="Block separator").grid(row=1, column=0, padx=(0, 4), pady=(6, 0), sticky='w')
+    block_sep_entry = tb.Entry(params_frame)
+    block_sep_entry.grid(row=1, column=1, padx=(0, 16), pady=(6, 0), sticky='ew')
 
-    tb.Label(params_frame, text="Line separator").grid(row=0, column=6, padx=(0, 4), sticky='w')
-    line_sep_entry = tb.Entry(params_frame, width=14)
-    line_sep_entry.grid(row=0, column=7)
+    tb.Label(params_frame, text="Line separator").grid(row=1, column=2, padx=(0, 4), pady=(6, 0), sticky='w')
+    line_sep_entry = tb.Entry(params_frame)
+    line_sep_entry.grid(row=1, column=3, pady=(6, 0), sticky='ew')
 
     # Textbox
 
@@ -46,7 +50,7 @@ def gui():
     textbox = tb.Text(text_frame, wrap='none')
     textbox.grid(row=0, column=0, sticky='nsew')
 
-    y_scroll = tb.Scrollbar(text_frame, orient='vertical', command=textbox.yview())
+    y_scroll = tb.Scrollbar(text_frame, orient='vertical', command=textbox.yview)
     y_scroll.grid(row=0, column=1, sticky='ns')
     x_scroll = tb.Scrollbar(text_frame, orient='horizontal', command=textbox.xview)
     x_scroll.grid(row=1, column=0, sticky='ew')
