@@ -1,4 +1,4 @@
-# prayer-pause
+# line-repeater
 
 A utility for repeating lines, or blocks of lines. Available as a CLI tool, a desktop GUI, and a Python package.
 
